@@ -1,0 +1,101 @@
+city,unit_type,survey_year,vacancy_rate_pct,average_rent,num_units
+Calgary,Studio,2022,3.3,975,1624
+Calgary,Studio,2023,0.7,1207,1792
+Calgary,Studio,2024,4.6,1363,1908
+Calgary,Studio,2025,6.0,1442,2044
+Calgary,1 Bedroom,2022,2.9,1224,22007
+Calgary,1 Bedroom,2023,1.5,1469,23573
+Calgary,1 Bedroom,2024,4.6,1590,25101
+Calgary,1 Bedroom,2025,4.4,1586,27279
+Calgary,2 Bedroom,2022,2.6,1471,20952
+Calgary,2 Bedroom,2023,1.4,1704,22060
+Calgary,2 Bedroom,2024,5.1,1887,24869
+Calgary,2 Bedroom,2025,5.9,1922,27335
+Calgary,3 Bedroom+,2022,2.8,1511,1932
+Calgary,3 Bedroom+,2023,1.1,1763,1967
+Calgary,3 Bedroom+,2024,3.7,1974,2427
+Calgary,3 Bedroom+,2025,4.6,2182,3199
+Calgary,Total,2022,2.8,1337,46515
+Calgary,Total,2023,1.4,1577,49392
+Calgary,Total,2024,4.8,1735,54305
+Calgary,Total,2025,5.1,1764,59857
+Montreal,Studio,2022,2.9,790,42491
+Montreal,Studio,2023,2.2,818,43090
+Montreal,Studio,2024,2.4,901,43397
+Montreal,Studio,2025,3.6,1014,44786
+Montreal,1 Bedroom,2022,1.9,909,118913
+Montreal,1 Bedroom,2023,1.0,944,120661
+Montreal,1 Bedroom,2024,1.8,1034,122819
+Montreal,1 Bedroom,2025,3.2,1111,126181
+Montreal,2 Bedroom,2022,2.4,994,224936
+Montreal,2 Bedroom,2023,1.9,1046,226174
+Montreal,2 Bedroom,2024,1.3,1127,230317
+Montreal,2 Bedroom,2025,2.9,1349,229600
+Montreal,3 Bedroom+,2022,,1235,44062
+Montreal,3 Bedroom+,2023,,1324,44879
+Montreal,3 Bedroom+,2024,,1547,45315
+Montreal,3 Bedroom+,2025,2.2,1693,45986
+Montreal,Total,2022,2.2,972,430402
+Montreal,Total,2023,1.6,1036,434804
+Montreal,Total,2024,2.0,1135,441848
+Montreal,Total,2025,3.0,1272,446553
+Vancouver,Studio,2022,1.2,1419,9563
+Vancouver,Studio,2023,1.0,1529,9935
+Vancouver,Studio,2024,1.9,1618,10158
+Vancouver,Studio,2025,3.5,1705,10664
+Vancouver,1 Bedroom,2022,0.7,1629,40314
+Vancouver,1 Bedroom,2023,0.6,1786,41107
+Vancouver,1 Bedroom,2024,1.4,1837,41324
+Vancouver,1 Bedroom,2025,2.6,1860,41538
+Vancouver,2 Bedroom,2022,1.2,2272,11024
+Vancouver,2 Bedroom,2023,1.2,2461,11414
+Vancouver,2 Bedroom,2024,1.8,2565,11441
+Vancouver,2 Bedroom,2025,2.4,2647,11750
+Vancouver,3 Bedroom+,2022,2.4,3059,791
+Vancouver,3 Bedroom+,2023,1.3,2994,985
+Vancouver,3 Bedroom+,2024,3.0,3524,1046
+Vancouver,3 Bedroom+,2025,2.2,3614,1227
+Vancouver,Total,2022,0.9,1726,61692
+Vancouver,Total,2023,0.8,1884,63441
+Vancouver,Total,2024,1.6,1967,63969
+Vancouver,Total,2025,2.7,1994,65179
+Toronto,Studio,2022,2.7,1317,23566
+Toronto,Studio,2023,1.7,1427,23429
+Toronto,Studio,2024,4.5,1456,23635
+Toronto,Studio,2025,4.2,1499,24305
+Toronto,1 Bedroom,2022,1.9,1538,116236
+Toronto,1 Bedroom,2023,1.7,1708,116426
+Toronto,1 Bedroom,2024,2.7,1715,116973
+Toronto,1 Bedroom,2025,3.5,1763,120040
+Toronto,2 Bedroom,2022,1.3,1811,109090
+Toronto,2 Bedroom,2023,1.0,1992,107898
+Toronto,2 Bedroom,2024,1.7,1985,113903
+Toronto,2 Bedroom,2025,2.1,2055,110563
+Toronto,3 Bedroom+,2022,1.1,2096,23436
+Toronto,3 Bedroom+,2023,1.0,2241,23228
+Toronto,3 Bedroom+,2024,1.4,2268,23348
+Toronto,3 Bedroom+,2025,1.8,2361,23893
+Toronto,Total,2022,1.7,1674,272328
+Toronto,Total,2023,1.4,1842,270981
+Toronto,Total,2024,2.3,1850,277859
+Toronto,Total,2025,2.8,1912,278801
+Ottawa,Studio,2022,1.6,1122,5799
+Ottawa,Studio,2023,1.6,1172,6123
+Ottawa,Studio,2024,2.4,1252,6275
+Ottawa,Studio,2025,3.5,1331,6702
+Ottawa,1 Bedroom,2022,2.0,1348,31340
+Ottawa,1 Bedroom,2023,2.1,1415,32092
+Ottawa,1 Bedroom,2024,2.4,1526,33341
+Ottawa,1 Bedroom,2025,3.0,1597,36455
+Ottawa,2 Bedroom,2022,2.3,1633,30285
+Ottawa,2 Bedroom,2023,2.3,1713,29543
+Ottawa,2 Bedroom,2024,2.8,1896,33624
+Ottawa,2 Bedroom,2025,3.0,1926,33061
+Ottawa,3 Bedroom+,2022,2.5,1947,3044
+Ottawa,3 Bedroom+,2023,1.3,2118,3031
+Ottawa,3 Bedroom+,2024,1.7,2191,3164
+Ottawa,3 Bedroom+,2025,2.6,2203,3647
+Ottawa,Total,2022,2.1,1462,70468
+Ottawa,Total,2023,2.1,1544,70789
+Ottawa,Total,2024,2.5,1680,76404
+Ottawa,Total,2025,3.0,1725,79865

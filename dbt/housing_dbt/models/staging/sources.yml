@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: housing_raw
+    schema: public
+    tables:
+      - name: fact_housing_metrics
+      - name: dim_city
+      - name: dim_date

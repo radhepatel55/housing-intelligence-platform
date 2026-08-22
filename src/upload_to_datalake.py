@@ -21,7 +21,7 @@ except Exception as e:
     print(f"Container may already exist: {e}")
 
 # Upload every file
-files_to_upload = ["interest_rates_raw.csv", "cmhc_rental_market_raw.csv"]
+files_to_upload = ["interest_rates_raw.csv", "cmhc_rental_market_raw.csv", "population_raw.csv"]
 
 for filename in files_to_upload:
     local_file = DATA_DIR / filename

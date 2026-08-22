@@ -7,11 +7,11 @@ conn = psycopg2.connect(
 cursor = conn.cursor()
 
 cursor.execute("""
-    SELECT city_name, year, population, population_growth_pct
-    FROM public.mart_population_growth
+    SELECT city_name, year, population_growth_pct, housing_supply_growth_pct
+    FROM public.mart_supply_vs_demand
     WHERE city_name = 'Toronto'
     ORDER BY year;
-""")
+    """)
 
 for row in cursor.fetchall():
     print(row)

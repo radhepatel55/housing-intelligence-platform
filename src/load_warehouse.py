@@ -38,7 +38,7 @@ population = pd.read_csv(SILVER_DIR / "silver_population.csv")
 population = population.rename(columns={"year": "year"})[["city_name", "year", "population"]]
 
 rental = pd.read_csv(SILVER_DIR / "silver_rental_market.csv")
-rental_totals = rental[rental["unit_type"] == "Total"][["city_name", "survey_year", "average_rent_x" if False else "average_rent", "vacancy_rate_pct"]]
+rental_totals = rental[rental["unit_type"] == "Total"][["city_name", "survey_year", "average_rent", "vacancy_rate_pct", "num_units"]]
 rental_totals = rental_totals.rename(columns={"survey_year": "year", "vacancy_rate_pct": "vacancy_rate"})
 
 interest = pd.read_csv(SILVER_DIR / "silver_interest_rates.csv")
@@ -72,13 +72,14 @@ for _, row in merged.iterrows():
 
     if city_key_result:
         cursor.execute(
-            """INSERT INTO fact_housing_metrics (city_key, date_key, population, avg_rent, vacancy_rate, interest_rate)
-               VALUES (%s, %s, %s, %s, %s, %s);""",
+            """INSERT INTO fact_housing_metrics (city_key, date_key, population, avg_rent, vacancy_rate, interest_rate, num_units)
+            VALUES (%s, %s, %s, %s, %s, %s, %s);""",
             (city_key_result[0], date_key,
-             None if pd.isna(row.get("population")) else int(row["population"]),
-             None if pd.isna(row.get("average_rent")) else float(row["average_rent"]),
-             None if pd.isna(row.get("vacancy_rate")) else float(row["vacancy_rate"]),
-             None if pd.isna(row.get("interest_rate")) else float(row["interest_rate"]))
+            None if pd.isna(row.get("population")) else int(row["population"]),
+            None if pd.isna(row.get("average_rent")) else float(row["average_rent"]),
+            None if pd.isna(row.get("vacancy_rate")) else float(row["vacancy_rate"]),
+            None if pd.isna(row.get("interest_rate")) else float(row["interest_rate"]),
+            None if pd.isna(row.get("num_units")) else int(row["num_units"]))
         )
         inserted += 1
     else:
@@ -86,15 +87,15 @@ for _, row in merged.iterrows():
 
 print(f"\nInserted {inserted} rows into fact_housing_metrics, skipped {skipped}")
 
-
 cursor.execute("""
-    SELECT c.city_name, f.date_key, f.population, f.avg_rent, f.vacancy_rate, f.interest_rate
+    SELECT c.city_name, f.date_key, f.population, f.avg_rent, f.vacancy_rate, f.interest_rate, f.num_units
     FROM fact_housing_metrics f
     JOIN dim_city c ON f.city_key = c.city_key
     WHERE c.city_name = 'Toronto'
     ORDER BY f.date_key DESC
     LIMIT 5;
 """)
+
 for row in cursor.fetchall():
     print(row)
 

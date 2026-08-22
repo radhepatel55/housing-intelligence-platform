@@ -22,5 +22,6 @@ CREATE TABLE fact_housing_metrics (
     population BIGINT,
     avg_rent NUMERIC(10,2),
     vacancy_rate NUMERIC(5,2),
-    interest_rate NUMERIC(5,2)
+    interest_rate NUMERIC(5,2),
+    num_units INT
 );

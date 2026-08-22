@@ -7,10 +7,10 @@ conn = psycopg2.connect(
 cursor = conn.cursor()
 
 cursor.execute("""
-    SELECT city_name, year, avg_rent, rent_growth_pct, affordability_rank
-    FROM public.mart_city_affordability
-    WHERE year = 2024
-    ORDER BY affordability_rank;
+    SELECT city_name, year, population, population_growth_pct
+    FROM public.mart_population_growth
+    WHERE city_name = 'Toronto'
+    ORDER BY year;
 """)
 
 for row in cursor.fetchall():

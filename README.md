@@ -13,24 +13,8 @@ This project answers real questions a housing policy analyst or city planner mig
 
 ## Architecture
 
-```
-Bank of Canada (API) + CMHC (rental reports) + StatCan (population API)
-        │
-        ▼
-   Python (requests, pandas) ── ingest, standardize city names
-        │
-        ▼
-   Azurite (local Azure Blob Storage emulator) ── raw data lake
-        │
-        ▼
-   PostgreSQL ── star schema warehouse (dim_city, dim_date, fact_housing_metrics)
-        │
-        ▼
-   dbt ── SQL transformation layer: staging + mart models with window functions
-        │
-        ▼
-   Power BI ── 3-page interactive dashboard
-```
+<img width="567" height="716" alt="image" src="https://github.com/user-attachments/assets/75b6d6cd-3311-40e4-beb3-c1b4ec355b3f" />
+
 
 ## Tech Stack
 
@@ -44,7 +28,7 @@ Bank of Canada (API) + CMHC (rental reports) + StatCan (population API)
 
 ## Data Sources
 
-- **Bank of Canada** — Valet API, Bank Rate series (V39079), 2009–2024, 4,509 observations. No auth required.
+- **Bank of Canada** — Valet API, Bank Rate series (V39079), 2009–2024.
 - **CMHC** — Primary Rental Market Statistics, Oct-22 through Oct-25, 5 cities (Toronto, Montreal, Vancouver, Calgary, Ottawa), transcribed from official PDF reports (see data quality notes below).
 - **Statistics Canada** — Table 17-10-0135-01, population estimates by Census Metropolitan Area, 2001–2022.
 

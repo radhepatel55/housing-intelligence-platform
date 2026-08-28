@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_fact_housing
+    columns:
+      - name: city_name
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Toronto', 'Montreal', 'Vancouver', 'Calgary', 'Ottawa']
+      - name: year
+        tests:
+          - not_null
+
+  - name: mart_city_affordability
+    columns:
+      - name: city_name
+        tests:
+          - not_null
+      - name: affordability_rank
+        tests:
+          - not_null
+
+  - name: mart_population_growth
+    columns:
+      - name: city_name
+        tests:
+          - not_null
+
+  - name: mart_supply_vs_demand
+    columns:
+      - name: city_name
+        tests:
+          - not_null

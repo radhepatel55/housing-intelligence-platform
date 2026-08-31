@@ -15,7 +15,6 @@ This project answers real questions a housing policy analyst or city planner mig
 
 <img width="567" height="716" alt="image" src="https://github.com/user-attachments/assets/75b6d6cd-3311-40e4-beb3-c1b4ec355b3f" />
 
-
 ## Tech Stack
 
 | Layer | Tool | Purpose |
@@ -28,7 +27,7 @@ This project answers real questions a housing policy analyst or city planner mig
 
 ## Data Sources
 
-- **Bank of Canada** — Valet API, Bank Rate series (V39079), 2009–2024.
+- **Bank of Canada** — Valet API, Bank Rate series (V39079), 2009–2024, 4,509 observations. No auth required.
 - **CMHC** — Primary Rental Market Statistics, Oct-22 through Oct-25, 5 cities (Toronto, Montreal, Vancouver, Calgary, Ottawa), transcribed from official PDF reports (see data quality notes below).
 - **Statistics Canada** — Table 17-10-0135-01, population estimates by Census Metropolitan Area, 2001–2022.
 
@@ -45,7 +44,14 @@ This project answers real questions a housing policy analyst or city planner mig
 2. **Standardize** — city names, date formats, and column names normalized across all 3 sources into a Silver layer
 3. **Warehouse** — loaded into PostgreSQL as a star schema (`dim_city`, `dim_date`, `fact_housing_metrics`), built idempotently (`TRUNCATE` before reload to prevent duplicate inserts on repeated runs)
 4. **Transform** — dbt models: a staging layer (`stg_fact_housing`) joining fact + dimensions, and 3 mart models using CTEs and window functions (`LAG`, `RANK`) for year-over-year growth and affordability ranking
-5. **Visualize** — Power BI connects live to Postgres, importing the 4 dbt models directly
+5. **Test** — 7 dbt tests (`not_null`, `accepted_values`) run automatically across all models, catching data issues (bad city names, missing keys) before they reach the dashboard
+6. **Visualize** — Power BI connects live to Postgres, importing the 4 dbt models directly
+
+### dbt Lineage
+
+<img width="1703" height="632" alt="image" src="https://github.com/user-attachments/assets/70e32aaa-0155-496e-8aa7-1246e6000bed" />
+
+Auto-generated via `dbt docs generate` — shows the full model dependency graph: 3 raw sources flowing into a single staging model, which then feeds 3 independent business-logic marts.
 
 ## Dashboard
 
@@ -74,5 +80,4 @@ Interest rate vs. rent trend line chart (filterable by city) plus a written insi
 - **Vancouver has the tightest rental market** (lowest vacancy rate, ~1.5%), while **Calgary has the most availability** (~3.5% vacancy).
 
 ## Setup
-
 See `/src` for ingestion and warehouse-loading scripts, `/sql` for the schema definition, and `/dbt/housing_dbt` for the dbt project (staging and mart models). Requires Docker (for PostgreSQL and Azurite) and a Postgres connection configured in `dbt/housing_dbt/housing_dbt/profiles.yml`.

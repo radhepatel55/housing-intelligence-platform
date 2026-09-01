@@ -55,21 +55,17 @@ Auto-generated via `dbt docs generate` — shows the full model dependency graph
 
 ## Dashboard
 
-![Housing Intelligence Dashboard](./dashboards/dashboard_screenshot.png)
+![Housing Intelligence Dashboard](./dashboards/housing-intellifence-dashboard.pbix)
 
 ### Dashboard Pages
 
 **Page 1 — Overview**
-*(screenshot: `./dashboards/page1_overview.png`)*
-KPI cards (cities tracked, average rent, latest data year), a bar chart ranking cities by average rent in the most recent year, and a line chart showing each city's rent trend over time. Answers "which cities are becoming less affordable?"
+*<img width="1312" height="597" alt="image" src="https://github.com/user-attachments/assets/d5874429-dafd-43cb-9bd6-edc87aeca6ad" />*
+KPI cards (cities tracked, average rent, average interest rate), a rent trend line chart by city and year, a City and Year slicer for filtering, and a grouped bar chart comparing average rent across all 5 cities by year. Answers "which cities are becoming less affordable?"
 
-**Page 2 — Deep Dive**
-*(screenshot: `./dashboards/page2_deep_dive.png`)*
-A population-growth-vs-housing-supply-growth line chart (filterable by city via slicer) and a vacancy rate comparison bar chart. Answers "does population growth outpace construction?" and "which cities have the tightest vacancy rates?"
-
-**Page 3 — Insights**
-*(screenshot: `./dashboards/page3_insights.png`)*
-Interest rate vs. rent trend line chart (filterable by city) plus a written insights summary covering the key findings below. Answers "how do interest rates correlate with housing prices, and what should a reader take away?"
+**Page 2 — Deep Dive & Insights**
+*<img width="1317" height="727" alt="image" src="https://github.com/user-attachments/assets/dec9bb3a-5642-4dde-87ac-2d28fdd926e2" />*
+A City slicer, a vacancy rate comparison bar chart, a dual-axis rent-vs-interest-rate trend line, a population-growth-vs-housing-supply-growth line chart, and a written insights summary covering the key findings below. Answers "does population growth outpace construction?", "how do interest rates correlate with rent?", "which cities have the tightest vacancy rates?", and "what should a reader take away from this data?"
 
 ## Key Findings
 
